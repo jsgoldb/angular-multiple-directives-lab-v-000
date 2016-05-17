@@ -1,4 +1,8 @@
 function ContactController() {
+    this.name = '';
+    this.phoneNumber = '';
+    var vm = this;
+
     this.contacts = [{
         name: 'Bob',
         phone: '0123458690'
@@ -12,6 +16,13 @@ function ContactController() {
 
     this.removeContact = function (index) {
         this.contacts.splice(index, 1);
+    }
+
+    this.addContact = function() {
+        this.contacts.push({
+            name: vm.name,
+            phone: vm.phoneNumber 
+            });
     }
 }
 
